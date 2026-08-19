@@ -158,29 +158,30 @@
 
   .mm-order-box__body { padding: 32px 36px 40px; }
 
-  /* ── MemberMouse form styling (best-effort skin) ──
-     MM_Form output classes vary by plugin version/theme, so these rules
-     combine generic element selectors (always apply) with common MM
-     class hooks (apply when present), using !important to survive any
-     inherited WP theme / plugin default styles. */
+  /* ── MemberMouse form styling ──
+     Targets MemberMouse's actual rendered class names (mm-checkoutInfoBlock,
+     mm-formField, mm-ccLogos, mm-button, etc.) confirmed from a live working
+     checkout page on this site, plus generic element selectors as a
+     fallback. !important guards against theme/plugin defaults. */
   .mm-order-box__body,
   .mm-order-box__body * {
     font-family: var(--sans) !important;
   }
-  .mm-order-box__body h1, .mm-order-box__body h2, .mm-order-box__body h3,
-  .mm-order-box__body h4, .mm-order-box__body h5, .mm-order-box__body h6,
-  .mm-order-box__body .mm_form_section_title,
-  .mm-order-box__body .mm_section_header {
+  .mm-order-box__body .mm-checkoutInfoBlock h3,
+  .mm-order-box__body h3.mm-hr {
     font-family: var(--serif) !important;
     font-size: 1.1rem !important;
     font-weight: 700 !important;
     color: var(--dark) !important;
+    background: none !important;
+    text-align: left !important;
+    padding: 0 !important;
     margin: 28px 0 14px !important;
     padding-top: 20px !important;
     border-top: 1px solid var(--warm-dark) !important;
+    border-radius: 0 !important;
   }
-  .mm-order-box__body h1:first-child, .mm-order-box__body h2:first-child,
-  .mm-order-box__body h3:first-child {
+  .mm-order-box__body .mm-checkoutInfoBlock h3:first-child {
     margin-top: 0 !important;
     padding-top: 0 !important;
     border-top: none !important;
@@ -191,8 +192,8 @@
     line-height: 1.6 !important;
     margin-bottom: 12px !important;
   }
-  .mm-order-box__body label,
-  .mm-order-box__body .mm_field_label {
+  .mm-order-box__body .mm-formField { margin-bottom: 14px !important; }
+  .mm-order-box__body .mm-formField label {
     display: block !important;
     font-size: 0.78rem !important;
     font-weight: 600 !important;
@@ -201,14 +202,15 @@
     color: var(--dark) !important;
     margin-bottom: 6px !important;
   }
+  .mm-order-box__body .mm-ccLogos { margin-bottom: 14px !important; }
+  .mm-order-box__body .mm-ccLogos img { max-width: 160px !important; height: auto !important; }
   .mm-order-box__body input[type="text"],
   .mm-order-box__body input[type="email"],
   .mm-order-box__body input[type="tel"],
   .mm-order-box__body input[type="password"],
   .mm-order-box__body input:not([type]),
   .mm-order-box__body select,
-  .mm-order-box__body textarea,
-  .mm-order-box__body .mm_field {
+  .mm-order-box__body textarea {
     width: 100% !important;
     padding: 12px 14px !important;
     border: 1px solid var(--warm-dark) !important;
@@ -216,7 +218,6 @@
     background: var(--warm) !important;
     color: var(--text) !important;
     font-size: 0.95rem !important;
-    margin-bottom: 14px !important;
     appearance: none !important;
     -webkit-appearance: none !important;
     transition: border-color 0.2s !important;
@@ -237,9 +238,7 @@
   }
   .mm-order-box__body button,
   .mm-order-box__body input[type="submit"],
-  .mm-order-box__body input[type="button"],
-  .mm-order-box__body .mm_submit_button,
-  .mm-order-box__body a.mm_giant_button {
+  .mm-order-box__body input[type="button"] {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
@@ -258,8 +257,7 @@
     transition: background 0.2s, transform 0.15s !important;
   }
   .mm-order-box__body button:hover,
-  .mm-order-box__body input[type="submit"]:hover,
-  .mm-order-box__body .mm_submit_button:hover {
+  .mm-order-box__body input[type="submit"]:hover {
     background: var(--blue-dark) !important;
     transform: translateY(-1px) !important;
   }
@@ -283,6 +281,51 @@
     font-size: 0.88rem !important;
     margin-bottom: 18px !important;
   }
+
+  .mm-order-box__body .secpmt { margin-bottom: 20px !important; }
+  .mm-order-box__body .secpmt__badge {
+    display: flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important;
+    background: var(--blue-light) !important; color: var(--blue-dark) !important;
+    padding: 10px 14px !important; border-radius: 8px !important;
+    font-weight: 700 !important; font-size: 0.85rem !important; text-align: center !important;
+    margin: 0 0 8px !important;
+  }
+  .mm-order-box__body .secpmt__note {
+    display: flex !important; align-items: center !important; gap: 8px !important;
+    font-size: 0.78rem !important; color: var(--muted) !important;
+    margin: 0 !important;
+  }
+  .mm-order-box__body .secpmt__note img { width: 28px !important; height: 28px !important; flex-shrink: 0 !important; }
+
+  .mm-order-box__body a.mm-button {
+    display: inline-block !important;
+    width: auto !important;
+    background: var(--dark) !important; color: white !important;
+    padding: 10px 18px !important; border-radius: 8px !important;
+    font-size: 0.85rem !important; font-weight: 600 !important;
+    text-decoration: none !important; text-align: center !important;
+    margin-top: 4px !important; cursor: pointer !important;
+    box-shadow: none !important;
+  }
+  .mm-order-box__body a.mm-button:hover { background: var(--mid) !important; }
+
+  .mm-order-box__body .mm-checkoutSection2 { margin-top: 20px !important; }
+  .mm-order-box__body .mm-productDesc { font-size: 0.85rem !important; color: var(--muted) !important; }
+  .mm-order-box__body .mm-consent { font-size: 0.78rem !important; color: var(--muted) !important; line-height: 1.6 !important; margin: 12px 0 !important; }
+  .mm-order-box__body .mm-consent a { color: var(--blue) !important; }
+
+  .mm-order-box__body .mm-terms {
+    display: flex !important; align-items: flex-start !important; gap: 10px !important;
+    font-size: 0.85rem !important; color: var(--muted) !important; margin: 16px 0 !important;
+  }
+  .mm-order-box__body .mm-terms input[type="checkbox"] { margin-top: 3px !important; }
+  .mm-order-box__body .mm-terms a { color: var(--blue) !important; }
+
+  .mm-order-box__body .mm-price-line {
+    text-align: center !important; font-family: var(--serif) !important; font-size: 1.1rem !important;
+    color: var(--dark) !important; margin: 16px 0 !important;
+  }
+  .mm-order-box__body hr { border: none !important; border-top: 1px solid var(--warm-dark) !important; margin: 20px 0 !important; }
 
   .order-guarantees {
     display: flex; justify-content: center; gap: 24px;
@@ -437,18 +480,14 @@
 <div class="step-panel" id="step-account">
 
 [MM_Form_Section type='accountInfo']
-
-Secure Order Form
-[MM_Form_Field type='input' name='firstName' customAttributes='placeholder="First Name"']
-
-[MM_Form_Field type='input' name='lastName' customAttributes='placeholder="Last Name"']
-
-[MM_Form_Field type='input' name='email' customAttributes='placeholder="Email Address"']
-
-[MM_Form_Field type='input' name='password' customAttributes='placeholder="Password"']
-
+<div id="mm-account-information-section" class="mm-checkoutInfoBlock">
+<h3>Secure Order Form</h3>
+<p class="mm-formField">[MM_Form_Field type='input' name='firstName' customAttributes='placeholder="First Name"']</p>
+<p class="mm-formField">[MM_Form_Field type='input' name='lastName' customAttributes='placeholder="Last Name"']</p>
+<p class="mm-formField">[MM_Form_Field type='input' name='email' customAttributes='placeholder="Email Address"']</p>
+<p class="mm-formField">[MM_Form_Field type='input' name='password' customAttributes='placeholder="Password"']</p>
 [MM_Form_Field type='hidden' name='phone' isRequired='false']
-
+</div>
 [/MM_Form_Section]
 
 <button type="button" class="step-continue-btn" id="continueToPayment">
@@ -463,54 +502,53 @@ Secure Order Form
 
 <button type="button" class="step-back-btn" id="backToAccount">&larr; Back to account details</button>
 
-Shopping is Safe & Secure - Guaranteed
-
-
-
-Secure credit card payment. This is a secure, 256-bit SSL encrypted payment.
+<div class="secpmt">
+<p class="secpmt__badge">Shopping is Safe &amp; Secure - Guaranteed</p>
+<p class="secpmt__note"><img src="https://www.renshawspt.com/wp-content/uploads/2017/06/secure-order-lock-02-40x40.png" width="28" height="28" alt="">Secure credit card payment. This is a secure, 256-bit SSL encrypted payment.</p>
+</div>
 
 [MM_Form_Section type='billingInfo']
+<div id="mm-billing-information-section" class="mm-checkoutInfoBlock">
+<h3>Billing Details</h3>
+<p class="mm-ccLogos"><img src="https://www.renshawspt.com/wp-content/plugins/membermouse/resources/images/cclogos.gif" alt="Visa, Master Card, American Express, Discover" width="199" height="30"></p>
+<p class="mm-formField"><label>Credit Card:</label>
+[MM_Form_Field name='ccNumber' customAttributes='placeholder="Credit Card Number"']</p>
+<p class="mm-formField"><label>Security Code:</label>
+[MM_Form_Field name='ccSecurityCode' customAttributes='placeholder="Security Code"']</p>
+<p id="mm-checkout-expiration-date" class="mm-checkout-expiration-date mm-formField"><label>Expiration Date: </label>
+[MM_Form_Field name='ccExpirationDate']</p>
 
-Billing Details
-Visa, Master Card, American Express, Discover
-
-Credit Card:
-[MM_Form_Field name='ccNumber' customAttributes='placeholder="Credit Card Number"']
-
-Security Code:
-[MM_Form_Field name='ccSecurityCode' customAttributes='placeholder="Security Code"']
-
-Expiration Date:
-[MM_Form_Field name='ccExpirationDate']
-
-Billing Address
-[MM_Form_Field name='billingAddress' customAttributes='placeholder="Billing Address"']
-
-[MM_Form_Field name='billingCity' customAttributes='placeholder="Billing City"']
-
-[MM_Form_Field name='billingState' customAttributes='placeholder="Billing State"']
-
-[MM_Form_Field name='billingZipCode' customAttributes='placeholder="Billing Zip Code"']
-
-[MM_Form_Field name='billingCountry']
-
+<h3 class="mm-hr">Billing Address</h3>
+<p class="mm-formField">[MM_Form_Field name='billingAddress' customAttributes='placeholder="Billing Address"']</p>
+<p class="mm-formField">[MM_Form_Field name='billingCity' customAttributes='placeholder="Billing City"']</p>
+<p class="mm-formField">[MM_Form_Field name='billingState' customAttributes='placeholder="Billing State"']</p>
+<p class="mm-formField">[MM_Form_Field name='billingZipCode' customAttributes='placeholder="Billing Zip Code"']</p>
+<p class="mm-formField">[MM_Form_Field name='billingCountry']</p>
+</div>
 [/MM_Form_Section]
 
-Coupons
-[MM_Form_Field name='couponCode']
-Apply Coupon
-
+<h3 class="mm-hr">Coupons</h3>
+<p class="mm-formField">[MM_Form_Field name='couponCode']
+<a class="mm-button" href="[MM_Form_Button type='applyCoupon']">Apply Coupon</a></p>
 [MM_Form_Message type='couponSuccess']
 [MM_Form_Message type='couponError']
 
-[MM_Form_Data name='productDescription']
+<div class="mm-checkoutSection2">
+<p class="mm-productDesc">[MM_Form_Data name='productDescription']</p>
+<p class="mm-consent"><em>(By registering for this Membership, you are creating an account with Renshaw's Personal Training, and hereby consent to receiving emails and targeted advertisements. If you are a EU data subject and wish to exercise your rights under GDPR with respect to your account data, please contact <a href="mailto:GDPR@renshawspt.com">GDPR@renshawspt.com</a>)</em></p>
 
-(By registering for this Membership, you are creating an account with Renshaw's Personal Training, and hereby consent to receiving emails and targeted advertisements. If you are a EU data subject and wish to exercise your rights under GDPR with respect to your account data, please contact GDPR@renshawspt.com)
+<hr>
 
-[MM_Form_Field type='custom' id='4' isRequired='true' class='']	I agree to the terms and conditions and privacy policy of Renshaw's Personal Training
+<div class="mm-terms">
+[MM_Form_Field type='custom' id='4' isRequired='true' class='']
+<span>I agree to the <a href="http://www.renshawspt.com/terms-conditions/" target="_blank" rel="noopener noreferrer">terms and conditions</a> and <a href="https://www.renshawspt.com/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy policy</a> of Renshaw's Personal Training</span>
+</div>
 
-Monthly Membership: $10 USD
-[MM_Form_Button type='all' label='Submit Order' color='orange']
+<p class="mm-price-line"><strong>Monthly Membership: $10</strong></p>
+<div class="mm-purchaseSection">
+<div class="mm-paymentbuttons">[MM_Form_Button type='all' label='Submit Order' color='orange']</div>
+</div>
+</div>
 
 </div>
 
