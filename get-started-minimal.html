@@ -490,7 +490,8 @@
     return firstInvalid;
   }
 
-  function goToBilling() {
+  function goToBilling(e) {
+    if (e) e.preventDefault();
     var firstInvalid = validateAccount();
     if (firstInvalid) {
       if (errorEl) errorEl.textContent = 'Please fill in all fields with a valid email to continue.';
@@ -505,7 +506,8 @@
     if (orderBox) orderBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function goToAccount() {
+  function goToAccount(e) {
+    if (e) e.preventDefault();
     stepBilling.classList.add('is-hidden');
     stepAccount.classList.remove('is-hidden');
     if (indicator2) indicator2.classList.remove('is-active');
