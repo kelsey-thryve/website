@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Started – Renshaw's Personal Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .rpt-getstarted-min, .rpt-getstarted-min *, .rpt-getstarted-min *::before, .rpt-getstarted-min *::after {
+    box-sizing: border-box; margin: 0; padding: 0;
+  }
 
-  :root {
+  .rpt-getstarted-min {
     --blue: #3DA7FD;
     --blue-dark: #1a8de8;
     --blue-light: #EAF4FF;
@@ -25,10 +21,7 @@
     --white: #FFFFFF;
     --serif: 'Mitr', sans-serif;
     --sans: 'Roboto', sans-serif;
-  }
 
-  html { scroll-behavior: smooth; }
-  body {
     font-family: var(--sans);
     color: var(--text);
     background: var(--dark);
@@ -38,18 +31,18 @@
   }
 
   /* ── HERO ── */
-  .hero {
+  .rpt-getstarted-min .hero {
     background: var(--dark);
     padding: 64px 24px 48px;
     text-align: center;
     position: relative; overflow: hidden;
   }
-  .hero::before {
+  .rpt-getstarted-min .hero::before {
     content: '';
     position: absolute; inset: 0;
     background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(61,167,253,0.18) 0%, transparent 70%);
   }
-  .hero__tag {
+  .rpt-getstarted-min .hero__tag {
     display: inline-block;
     background: rgba(61,167,253,0.15);
     border: 1px solid rgba(61,167,253,0.4);
@@ -59,28 +52,28 @@
     padding: 6px 16px; border-radius: 100px;
     margin-bottom: 22px; position: relative;
   }
-  .hero__headline {
+  .rpt-getstarted-min .hero__headline {
     font-family: var(--serif);
     font-size: clamp(2.2rem, 5.5vw, 3.2rem);
     font-weight: 700; color: var(--white);
     line-height: 1.18; max-width: 680px;
     margin: 0 auto 14px; position: relative;
   }
-  .hero__headline em { font-style: normal; color: var(--blue); }
-  .hero__sub {
+  .rpt-getstarted-min .hero__headline em { font-style: normal; color: var(--blue); }
+  .rpt-getstarted-min .hero__sub {
     font-size: 1.05rem; color: rgba(255,255,255,0.62);
     max-width: 480px; margin: 0 auto; position: relative;
     line-height: 1.7;
   }
-  .hero__sub strong { color: rgba(255,255,255,0.9); }
+  .rpt-getstarted-min .hero__sub strong { color: rgba(255,255,255,0.9); }
 
   /* ── ORDER / CHECKOUT ── */
-  .order-section {
+  .rpt-getstarted-min .order-section {
     padding: 44px 24px 64px;
     background: var(--warm);
   }
 
-  .mm-order-box {
+  .rpt-getstarted-min .mm-order-box {
     max-width: 520px;
     margin: 0 auto;
     background: white;
@@ -89,38 +82,38 @@
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(13,27,42,0.15);
   }
-  .mm-order-box__price-header {
+  .rpt-getstarted-min .mm-order-box__price-header {
     background: var(--dark);
     padding: 24px 32px;
     text-align: center;
   }
-  .mm-order-box__price-header span {
+  .rpt-getstarted-min .mm-order-box__price-header span {
     font-size: 0.72rem; font-weight: 700;
     letter-spacing: 2px; text-transform: uppercase;
     color: var(--blue); display: block; margin-bottom: 8px;
   }
-  .mm-order-box__price-header .amount {
+  .rpt-getstarted-min .mm-order-box__price-header .amount {
     font-family: var(--serif);
     font-size: 2.6rem; font-weight: 700;
     color: white; line-height: 1;
   }
-  .mm-order-box__price-header .amount sup { font-size: 1.15rem; vertical-align: super; }
-  .mm-order-box__price-header .amount sub { font-size: 0.85rem; font-family: var(--sans); font-weight: 400; color: rgba(255,255,255,0.5); }
-  .mm-order-box__price-header .per { color: rgba(255,255,255,0.45); font-size: 0.8rem; margin-top: 6px; }
+  .rpt-getstarted-min .mm-order-box__price-header .amount sup { font-size: 1.15rem; vertical-align: super; }
+  .rpt-getstarted-min .mm-order-box__price-header .amount sub { font-size: 0.85rem; font-family: var(--sans); font-weight: 400; color: rgba(255,255,255,0.5); }
+  .rpt-getstarted-min .mm-order-box__price-header .per { color: rgba(255,255,255,0.45); font-size: 0.8rem; margin-top: 6px; }
 
-  .mm-order-box__body { padding: 28px 32px 34px; }
+  .rpt-getstarted-min .mm-order-box__body { padding: 28px 32px 34px; }
 
   /* ── MemberMouse form styling ──
      Targets MemberMouse's actual rendered class names (mm-checkoutInfoBlock,
      mm-formField, mm-ccLogos, mm-button, etc.) confirmed from a live working
      checkout page on this site, plus generic element selectors as a
      fallback. !important guards against theme/plugin defaults. */
-  .mm-order-box__body,
-  .mm-order-box__body * {
+  .rpt-getstarted-min .mm-order-box__body,
+  .rpt-getstarted-min .mm-order-box__body * {
     font-family: var(--sans) !important;
   }
-  .mm-order-box__body .mm-checkoutInfoBlock h3,
-  .mm-order-box__body h3.mm-hr {
+  .rpt-getstarted-min .mm-order-box__body .mm-checkoutInfoBlock h3,
+  .rpt-getstarted-min .mm-order-box__body h3.mm-hr {
     font-family: var(--serif) !important;
     font-size: 1.05rem !important;
     font-weight: 700 !important;
@@ -133,19 +126,19 @@
     border-top: 1px solid var(--warm-dark) !important;
     border-radius: 0 !important;
   }
-  .mm-order-box__body .mm-checkoutInfoBlock h3:first-child {
+  .rpt-getstarted-min .mm-order-box__body .mm-checkoutInfoBlock h3:first-child {
     margin-top: 0 !important;
     padding-top: 0 !important;
     border-top: none !important;
   }
-  .mm-order-box__body p {
+  .rpt-getstarted-min .mm-order-box__body p {
     color: var(--muted) !important;
     font-size: 0.86rem !important;
     line-height: 1.6 !important;
     margin-bottom: 12px !important;
   }
-  .mm-order-box__body .mm-formField { margin-bottom: 12px !important; }
-  .mm-order-box__body .mm-formField label {
+  .rpt-getstarted-min .mm-order-box__body .mm-formField { margin-bottom: 12px !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-formField label {
     display: block !important;
     font-size: 0.76rem !important;
     font-weight: 600 !important;
@@ -154,15 +147,15 @@
     color: var(--dark) !important;
     margin-bottom: 6px !important;
   }
-  .mm-order-box__body .mm-ccLogos { margin-bottom: 12px !important; }
-  .mm-order-box__body .mm-ccLogos img { max-width: 150px !important; height: auto !important; }
-  .mm-order-box__body input[type="text"],
-  .mm-order-box__body input[type="email"],
-  .mm-order-box__body input[type="tel"],
-  .mm-order-box__body input[type="password"],
-  .mm-order-box__body input:not([type]),
-  .mm-order-box__body select,
-  .mm-order-box__body textarea {
+  .rpt-getstarted-min .mm-order-box__body .mm-ccLogos { margin-bottom: 12px !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-ccLogos img { max-width: 150px !important; height: auto !important; }
+  .rpt-getstarted-min .mm-order-box__body input[type="text"],
+  .rpt-getstarted-min .mm-order-box__body input[type="email"],
+  .rpt-getstarted-min .mm-order-box__body input[type="tel"],
+  .rpt-getstarted-min .mm-order-box__body input[type="password"],
+  .rpt-getstarted-min .mm-order-box__body input:not([type]),
+  .rpt-getstarted-min .mm-order-box__body select,
+  .rpt-getstarted-min .mm-order-box__body textarea {
     width: 100% !important;
     padding: 11px 14px !important;
     border: 1px solid var(--warm-dark) !important;
@@ -174,23 +167,23 @@
     -webkit-appearance: none !important;
     transition: border-color 0.2s !important;
   }
-  .mm-order-box__body input:focus,
-  .mm-order-box__body select:focus,
-  .mm-order-box__body textarea:focus {
+  .rpt-getstarted-min .mm-order-box__body input:focus,
+  .rpt-getstarted-min .mm-order-box__body select:focus,
+  .rpt-getstarted-min .mm-order-box__body textarea:focus {
     outline: none !important;
     border-color: var(--blue) !important;
     background: white !important;
   }
-  .mm-order-box__body input[type="checkbox"],
-  .mm-order-box__body input[type="radio"] {
+  .rpt-getstarted-min .mm-order-box__body input[type="checkbox"],
+  .rpt-getstarted-min .mm-order-box__body input[type="radio"] {
     width: auto !important;
     display: inline-block !important;
     margin: 0 8px 0 0 !important;
     vertical-align: middle !important;
   }
-  .mm-order-box__body button,
-  .mm-order-box__body input[type="submit"],
-  .mm-order-box__body input[type="button"] {
+  .rpt-getstarted-min .mm-order-box__body button,
+  .rpt-getstarted-min .mm-order-box__body input[type="submit"],
+  .rpt-getstarted-min .mm-order-box__body input[type="button"] {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
@@ -208,13 +201,13 @@
     box-shadow: 0 4px 20px rgba(61,167,253,0.4) !important;
     transition: background 0.2s, transform 0.15s !important;
   }
-  .mm-order-box__body button:hover,
-  .mm-order-box__body input[type="submit"]:hover {
+  .rpt-getstarted-min .mm-order-box__body button:hover,
+  .rpt-getstarted-min .mm-order-box__body input[type="submit"]:hover {
     background: var(--blue-dark) !important;
     transform: translateY(-1px) !important;
   }
-  .mm-order-box__body .mm_form_message,
-  .mm-order-box__body .mm_error_message {
+  .rpt-getstarted-min .mm-order-box__body .mm_form_message,
+  .rpt-getstarted-min .mm-order-box__body .mm_error_message {
     background: #FEF2F2 !important;
     border: 1px solid #FCA5A5 !important;
     color: #B91C1C !important;
@@ -223,8 +216,8 @@
     font-size: 0.86rem !important;
     margin-bottom: 16px !important;
   }
-  .mm-order-box__body .mm_couponSuccess,
-  .mm-order-box__body .mm_form_message.success {
+  .rpt-getstarted-min .mm-order-box__body .mm_couponSuccess,
+  .rpt-getstarted-min .mm-order-box__body .mm_form_message.success {
     background: var(--blue-light) !important;
     border: 1px solid var(--blue-mid) !important;
     color: var(--blue-dark) !important;
@@ -234,22 +227,22 @@
     margin-bottom: 16px !important;
   }
 
-  .mm-order-box__body .secpmt { margin-bottom: 18px !important; }
-  .mm-order-box__body .secpmt__badge {
+  .rpt-getstarted-min .mm-order-box__body .secpmt { margin-bottom: 18px !important; }
+  .rpt-getstarted-min .mm-order-box__body .secpmt__badge {
     display: flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important;
     background: var(--blue-light) !important; color: var(--blue-dark) !important;
     padding: 9px 14px !important; border-radius: 8px !important;
     font-weight: 700 !important; font-size: 0.82rem !important; text-align: center !important;
     margin: 0 0 8px !important;
   }
-  .mm-order-box__body .secpmt__note {
+  .rpt-getstarted-min .mm-order-box__body .secpmt__note {
     display: flex !important; align-items: center !important; gap: 8px !important;
     font-size: 0.76rem !important; color: var(--muted) !important;
     margin: 0 !important;
   }
-  .mm-order-box__body .secpmt__note img { width: 26px !important; height: 26px !important; flex-shrink: 0 !important; }
+  .rpt-getstarted-min .mm-order-box__body .secpmt__note img { width: 26px !important; height: 26px !important; flex-shrink: 0 !important; }
 
-  .mm-order-box__body a.mm-button {
+  .rpt-getstarted-min .mm-order-box__body a.mm-button {
     display: inline-block !important;
     width: auto !important;
     background: var(--dark) !important; color: white !important;
@@ -259,87 +252,87 @@
     margin-top: 4px !important; cursor: pointer !important;
     box-shadow: none !important;
   }
-  .mm-order-box__body a.mm-button:hover { background: var(--mid) !important; }
+  .rpt-getstarted-min .mm-order-box__body a.mm-button:hover { background: var(--mid) !important; }
 
-  .mm-order-box__body .mm-checkoutSection2 { margin-top: 18px !important; }
-  .mm-order-box__body .mm-productDesc { font-size: 0.82rem !important; color: var(--muted) !important; }
-  .mm-order-box__body .mm-consent { font-size: 0.76rem !important; color: var(--muted) !important; line-height: 1.6 !important; margin: 12px 0 !important; }
-  .mm-order-box__body .mm-consent a { color: var(--blue) !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-checkoutSection2 { margin-top: 18px !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-productDesc { font-size: 0.82rem !important; color: var(--muted) !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-consent { font-size: 0.76rem !important; color: var(--muted) !important; line-height: 1.6 !important; margin: 12px 0 !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-consent a { color: var(--blue) !important; }
 
-  .mm-order-box__body .mm-terms {
+  .rpt-getstarted-min .mm-order-box__body .mm-terms {
     display: flex !important; align-items: flex-start !important; gap: 10px !important;
     font-size: 0.82rem !important; color: var(--muted) !important; margin: 14px 0 !important;
   }
-  .mm-order-box__body .mm-terms input[type="checkbox"] { margin-top: 3px !important; }
-  .mm-order-box__body .mm-terms a { color: var(--blue) !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-terms input[type="checkbox"] { margin-top: 3px !important; }
+  .rpt-getstarted-min .mm-order-box__body .mm-terms a { color: var(--blue) !important; }
 
-  .mm-order-box__body .mm-price-line {
+  .rpt-getstarted-min .mm-order-box__body .mm-price-line {
     text-align: center !important; font-family: var(--serif) !important; font-size: 1.05rem !important;
     color: var(--dark) !important; margin: 14px 0 !important;
   }
-  .mm-order-box__body hr { border: none !important; border-top: 1px solid var(--warm-dark) !important; margin: 18px 0 !important; }
+  .rpt-getstarted-min .mm-order-box__body hr { border: none !important; border-top: 1px solid var(--warm-dark) !important; margin: 18px 0 !important; }
 
-  .footer-note {
+  .rpt-getstarted-min .footer-note {
     text-align: center; padding: 20px 24px 32px;
     color: rgba(255,255,255,0.28); font-size: 0.78rem;
     background: var(--dark);
   }
 
   /* ── CHECKOUT STEPS (Stripe-style two-step flow) ── */
-  .checkout-steps {
+  .rpt-getstarted-min .checkout-steps {
     display: flex; align-items: center; justify-content: center;
     gap: 10px; margin-bottom: 24px;
   }
-  .checkout-step {
+  .rpt-getstarted-min .checkout-step {
     display: flex; align-items: center; gap: 8px;
     font-size: 0.8rem; font-weight: 600; color: var(--muted);
   }
-  .checkout-step__num {
+  .rpt-getstarted-min .checkout-step__num {
     width: 24px; height: 24px; border-radius: 50%;
     background: var(--warm-dark); color: var(--muted);
     display: flex; align-items: center; justify-content: center;
     font-size: 0.76rem; font-weight: 700; flex-shrink: 0;
     transition: background 0.2s, color 0.2s;
   }
-  .checkout-step.is-active .checkout-step__num { background: var(--blue); color: white; }
-  .checkout-step.is-active .checkout-step__label { color: var(--dark); }
-  .checkout-step.is-complete .checkout-step__num { background: var(--blue-dark); color: white; }
-  .checkout-step__line { width: 36px; height: 2px; background: var(--warm-dark); }
+  .rpt-getstarted-min .checkout-step.is-active .checkout-step__num { background: var(--blue); color: white; }
+  .rpt-getstarted-min .checkout-step.is-active .checkout-step__label { color: var(--dark); }
+  .rpt-getstarted-min .checkout-step.is-complete .checkout-step__num { background: var(--blue-dark); color: white; }
+  .rpt-getstarted-min .checkout-step__line { width: 36px; height: 2px; background: var(--warm-dark); }
 
-  .step-panel.is-hidden { display: none !important; }
-  .step-panel { animation: stepFadeIn 0.35s ease; }
-  @keyframes stepFadeIn {
+  .rpt-getstarted-min .step-panel.is-hidden { display: none !important; }
+  .rpt-getstarted-min .step-panel { animation: rptMinStepFadeIn 0.35s ease; }
+  @keyframes rptMinStepFadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .mm-order-box__body button.step-continue-btn {
+  .rpt-getstarted-min .mm-order-box__body button.step-continue-btn {
     display: flex !important;
     align-items: center !important; justify-content: center !important; gap: 8px !important;
   }
-  .mm-order-box__body button.step-back-btn {
+  .rpt-getstarted-min .mm-order-box__body button.step-back-btn {
     display: inline-flex !important; align-items: center !important; gap: 6px !important;
     width: auto !important; background: none !important; box-shadow: none !important;
     color: var(--muted) !important; padding: 0 !important; margin: 0 0 18px !important;
     font-size: 0.82rem !important; font-weight: 600 !important; text-transform: none !important;
   }
-  .mm-order-box__body button.step-back-btn:hover { background: none !important; color: var(--blue) !important; transform: none !important; }
+  .rpt-getstarted-min .mm-order-box__body button.step-back-btn:hover { background: none !important; color: var(--blue) !important; transform: none !important; }
 
-  .step-error {
+  .rpt-getstarted-min .step-error {
     color: #B91C1C; font-size: 0.82rem; margin-top: 8px; min-height: 1.2em;
   }
-  .mm-order-box__body input.field-error,
-  .mm-order-box__body select.field-error {
+  .rpt-getstarted-min .mm-order-box__body input.field-error,
+  .rpt-getstarted-min .mm-order-box__body select.field-error {
     border-color: #EF4444 !important;
     background: #FEF2F2 !important;
   }
 
   @media (max-width: 560px) {
-    .mm-order-box__body { padding: 22px 20px 28px; }
+    .rpt-getstarted-min .mm-order-box__body { padding: 22px 20px 28px; }
   }
 </style>
-</head>
-<body>
+
+<div class="rpt-getstarted-min">
 
 <!-- HERO -->
 <section class="hero">
@@ -461,6 +454,8 @@
 
 <div class="footer-note">&copy; 2026 Renshaw's Personal Training. All rights reserved.</div>
 
+</div><!-- /.rpt-getstarted-min -->
+
 <noscript><style>
   .step-panel.is-hidden { display: block !important; }
   .checkout-steps, .step-back-btn { display: none !important; }
@@ -535,6 +530,3 @@
   });
 })();
 </script>
-
-</body>
-</html>
