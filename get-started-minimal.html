@@ -493,11 +493,11 @@
   function goToBilling() {
     var firstInvalid = validateAccount();
     if (firstInvalid) {
-      errorEl.textContent = 'Please fill in all fields with a valid email to continue.';
+      if (errorEl) errorEl.textContent = 'Please fill in all fields with a valid email to continue.';
       firstInvalid.focus();
       return;
     }
-    errorEl.textContent = '';
+    if (errorEl) errorEl.textContent = '';
     stepAccount.classList.add('is-hidden');
     stepBilling.classList.remove('is-hidden');
     if (indicator1) { indicator1.classList.remove('is-active'); indicator1.classList.add('is-complete'); }
