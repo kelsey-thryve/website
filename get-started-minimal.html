@@ -274,55 +274,6 @@
   }
   .rpt-getstarted-min .mm-order-box__body hr { border: none !important; border-top: 1px solid var(--warm-dark) !important; margin: 18px 0 !important; }
 
-  /* ── CHECKOUT STEPS (Stripe-style two-step flow) ── */
-  .rpt-getstarted-min .checkout-steps {
-    display: flex; align-items: center; justify-content: center;
-    gap: 10px; margin-bottom: 24px;
-  }
-  .rpt-getstarted-min .checkout-step {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 0.8rem; font-weight: 600; color: var(--muted);
-  }
-  .rpt-getstarted-min .checkout-step__num {
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--warm-dark); color: var(--muted);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.76rem; font-weight: 700; flex-shrink: 0;
-    transition: background 0.2s, color 0.2s;
-  }
-  .rpt-getstarted-min .checkout-step.is-active .checkout-step__num { background: var(--blue); color: white; }
-  .rpt-getstarted-min .checkout-step.is-active .checkout-step__label { color: var(--dark); }
-  .rpt-getstarted-min .checkout-step.is-complete .checkout-step__num { background: var(--blue-dark); color: white; }
-  .rpt-getstarted-min .checkout-step__line { width: 36px; height: 2px; background: var(--warm-dark); }
-
-  .rpt-getstarted-min .step-panel.is-hidden { display: none !important; }
-  .rpt-getstarted-min .step-panel { animation: rptMinStepFadeIn 0.35s ease; }
-  @keyframes rptMinStepFadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .rpt-getstarted-min .mm-order-box__body button.step-continue-btn {
-    display: flex !important;
-    align-items: center !important; justify-content: center !important; gap: 8px !important;
-  }
-  .rpt-getstarted-min .mm-order-box__body button.step-back-btn {
-    display: inline-flex !important; align-items: center !important; gap: 6px !important;
-    width: auto !important; background: none !important; box-shadow: none !important;
-    color: var(--muted) !important; padding: 0 !important; margin: 0 0 18px !important;
-    font-size: 0.82rem !important; font-weight: 600 !important; text-transform: none !important;
-  }
-  .rpt-getstarted-min .mm-order-box__body button.step-back-btn:hover { background: none !important; color: var(--blue) !important; transform: none !important; }
-
-  .rpt-getstarted-min .step-error {
-    color: #B91C1C; font-size: 0.82rem; margin-top: 8px; min-height: 1.2em;
-  }
-  .rpt-getstarted-min .mm-order-box__body input.field-error,
-  .rpt-getstarted-min .mm-order-box__body select.field-error {
-    border-color: #EF4444 !important;
-    background: #FEF2F2 !important;
-  }
-
   @media (max-width: 560px) {
     .rpt-getstarted-min .hero { padding: 128px 12px 96px; }
     .rpt-getstarted-min .hero__tag { font-size: 0.66rem; padding: 6px 14px; margin-bottom: 20px; }
@@ -359,20 +310,6 @@
 [MM_Form type='checkout']
 [MM_Form_Message type='error']
 
-<div class="checkout-steps">
-  <div class="checkout-step is-active" data-step="1">
-    <span class="checkout-step__num">1</span>
-    <span class="checkout-step__label">Account</span>
-  </div>
-  <div class="checkout-step__line"></div>
-  <div class="checkout-step" data-step="2">
-    <span class="checkout-step__num">2</span>
-    <span class="checkout-step__label">Payment</span>
-  </div>
-</div>
-
-<div class="step-panel" id="step-account">
-
 [MM_Form_Section type='accountInfo']
 <div id="mm-account-information-section" class="mm-checkoutInfoBlock">
 <h3>Secure Order Form</h3>
@@ -383,18 +320,6 @@
 [MM_Form_Field type='hidden' name='phone' isRequired='false']
 </div>
 [/MM_Form_Section]
-
-<button type="button" class="step-continue-btn" id="continueToPayment">
-  Continue to Payment
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-<p class="step-error" id="stepAccountError"></p>
-
-</div>
-
-<div class="step-panel is-hidden" id="step-billing">
-
-<button type="button" class="step-back-btn" id="backToAccount">&larr; Back to account details</button>
 
 <div class="secpmt">
 <p class="secpmt__badge">Shopping is Safe &amp; Secure - Guaranteed</p>
@@ -444,8 +369,6 @@
 </div>
 </div>
 
-</div>
-
 [/MM_Form]
 
     </div>
@@ -453,85 +376,3 @@
 </section>
 
 </div><!-- /.rpt-getstarted-min -->
-
-<noscript><style>
-  .step-panel.is-hidden { display: block !important; }
-  .checkout-steps, .step-back-btn { display: none !important; }
-</style></noscript>
-
-<script>
-(function() {
-  var stepAccount = document.getElementById('step-account');
-  var stepBilling = document.getElementById('step-billing');
-  var continueBtn = document.getElementById('continueToPayment');
-  var backBtn = document.getElementById('backToAccount');
-  var errorEl = document.getElementById('stepAccountError');
-  var indicator1 = document.querySelector('.checkout-step[data-step="1"]');
-  var indicator2 = document.querySelector('.checkout-step[data-step="2"]');
-  var orderBox = document.querySelector('.mm-order-box');
-
-  if (!stepAccount || !stepBilling || !continueBtn) return;
-
-  function fieldIn(container, name) {
-    return container.querySelector('[name="' + name + '"]');
-  }
-
-  function validateAccount() {
-    var required = ['firstName', 'lastName', 'email', 'password'];
-    var firstInvalid = null;
-    for (var i = 0; i < required.length; i++) {
-      var f = fieldIn(stepAccount, required[i]);
-      if (f) {
-        f.classList.remove('field-error');
-        var val = (f.value || '').trim();
-        var invalid = !val;
-        if (!invalid) {
-          if (required[i] === 'email') {
-            if (val.indexOf('@') === -1) invalid = true;
-          }
-        }
-        if (invalid) {
-          f.classList.add('field-error');
-          if (!firstInvalid) firstInvalid = f;
-        }
-      }
-    }
-    return firstInvalid;
-  }
-
-  function goToBilling(e) {
-    if (e) e.preventDefault();
-    var firstInvalid = validateAccount();
-    if (firstInvalid) {
-      if (errorEl) errorEl.textContent = 'Please fill in all fields with a valid email to continue.';
-      firstInvalid.focus();
-      return;
-    }
-    if (errorEl) errorEl.textContent = '';
-    stepAccount.classList.add('is-hidden');
-    stepBilling.classList.remove('is-hidden');
-    if (indicator1) { indicator1.classList.remove('is-active'); indicator1.classList.add('is-complete'); }
-    if (indicator2) indicator2.classList.add('is-active');
-    if (orderBox) orderBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function goToAccount(e) {
-    if (e) e.preventDefault();
-    stepBilling.classList.add('is-hidden');
-    stepAccount.classList.remove('is-hidden');
-    if (indicator2) indicator2.classList.remove('is-active');
-    if (indicator1) { indicator1.classList.add('is-active'); indicator1.classList.remove('is-complete'); }
-    if (orderBox) orderBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  continueBtn.addEventListener('click', goToBilling);
-  if (backBtn) backBtn.addEventListener('click', goToAccount);
-
-  stepAccount.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      goToBilling();
-    }
-  });
-})();
-</script>
