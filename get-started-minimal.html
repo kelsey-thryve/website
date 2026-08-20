@@ -72,6 +72,23 @@
     padding: 44px 24px 64px;
     background: var(--warm);
   }
+  .rpt-getstarted-min .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 12px; display: block; text-align: center;
+  }
+  .rpt-getstarted-min .section-headline {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700; color: var(--dark);
+    line-height: 1.25; text-align: center;
+  }
+  .rpt-getstarted-min .section-headline em { font-style: normal; color: var(--blue); }
+  .rpt-getstarted-min .order-section__header { text-align: center; margin-bottom: 32px; }
+  .rpt-getstarted-min .order-section__header p {
+    color: var(--muted); max-width: 440px; margin: 10px auto 0;
+    font-size: 0.9rem; line-height: 1.65; text-align: center;
+  }
 
   .rpt-getstarted-min .mm-order-box {
     max-width: 520px;
@@ -285,17 +302,25 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero__tag">Join Today</div>
+  <div class="hero__tag">Structured Workouts for Men 30+</div>
   <h1 class="hero__headline">
-    Everything you need. <em>$10/month.</em>
+    Stop Guessing Workouts.<br>
+    Start <em>Building Muscle.</em>
   </h1>
   <p class="hero__sub">
-    No long-term contract. Cancel anytime in seconds, no questions asked.
+    Full access to <strong>50+ months inside the workout vault</strong>.<br>
+    Brand-new workout program added every month.<br>
+    Only <strong>$10/month</strong>.
   </p>
 </section>
 
 <!-- ORDER / MEMBERMOUSE CHECKOUT -->
 <section class="order-section" id="order">
+  <div class="order-section__header">
+    <span class="section-label">Join Today</span>
+    <h2 class="section-headline">Everything you need. <em>$10/month.</em></h2>
+    <p>No long-term contract. Cancel anytime in seconds, no questions asked.</p>
+  </div>
   <div class="mm-order-box">
     <div class="mm-order-box__price-header">
       <span>Renshaw Workout Vault</span>
