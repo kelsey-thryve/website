@@ -247,7 +247,8 @@
   }
   .rpt-getstarted .mm-order-box__body button,
   .rpt-getstarted .mm-order-box__body input[type="submit"],
-  .rpt-getstarted .mm-order-box__body input[type="button"] {
+  .rpt-getstarted .mm-order-box__body input[type="button"],
+  .rpt-getstarted .mm-order-box__body a.mm-submit-button {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
@@ -264,9 +265,11 @@
     margin-top: 10px !important;
     box-shadow: 0 4px 20px rgba(61,167,253,0.4) !important;
     transition: background 0.2s, transform 0.15s !important;
+    box-sizing: border-box !important;
   }
   .rpt-getstarted .mm-order-box__body button:hover,
-  .rpt-getstarted .mm-order-box__body input[type="submit"]:hover {
+  .rpt-getstarted .mm-order-box__body input[type="submit"]:hover,
+  .rpt-getstarted .mm-order-box__body a.mm-submit-button:hover {
     background: var(--blue-dark) !important;
     transform: translateY(-1px) !important;
   }
@@ -507,7 +510,7 @@
 </div>
 
 <div class="mm-purchaseSection">
-<div class="mm-paymentbuttons">[MM_Form_Button type='submit' label='Submit Order' color='blue']</div>
+<div class="mm-paymentbuttons"><a class="mm-submit-button" href="[MM_Form_Button type='submit']">Submit Order</a></div>
 </div>
 </div>
 
