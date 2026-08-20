@@ -647,7 +647,12 @@
       if (f) {
         f.classList.remove('field-error');
         var val = (f.value || '').trim();
-        var invalid = !val || (required[i] === 'email' && val.indexOf('@') === -1);
+        var invalid = !val;
+        if (!invalid) {
+          if (required[i] === 'email') {
+            if (val.indexOf('@') === -1) invalid = true;
+          }
+        }
         if (invalid) {
           f.classList.add('field-error');
           if (!firstInvalid) firstInvalid = f;
