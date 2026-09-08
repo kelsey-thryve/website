@@ -129,6 +129,21 @@
   }
   .price-card__amount sup { font-size: 1.05rem; vertical-align: super; margin-right: 1px; }
   .price-card__period { font-size: 0.95rem; font-family: var(--sans); font-weight: 400; color: rgba(255,255,255,0.5); }
+  .price-card__old-price {
+    font-family: var(--serif); font-size: 1.05rem; font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(255,107,107,0.9);
+    margin-bottom: 2px;
+  }
+  .price-card__savebadge {
+    display: inline-block;
+    background: #E63946; color: #fff;
+    font-size: 0.64rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px;
+    margin-bottom: 10px;
+  }
   .price-card__save {
     font-size: 0.72rem; font-weight: 700; color: var(--blue); letter-spacing: 0.5px; text-transform: uppercase;
     margin-bottom: 4px;
@@ -571,7 +586,9 @@
     <div class="price-card price-card--best">
       <span class="price-card__badge">Best Value</span>
       <span class="price-card__label">Yearly</span>
+      <div class="price-card__old-price">$120</div>
       <div class="price-card__amount"><sup>$</sup>89<span class="price-card__period">/year</span></div>
+      <span class="price-card__savebadge">Save $31</span>
       <div class="price-card__save">Get 3 Months Free</div>
       <div class="price-card__note">Only $7.42/month</div>
       <a href='https://www.renshawspt.com/vault-yearly/' class="price-card__btn">Join Yearly</a>
@@ -672,7 +689,9 @@
         <div class="price-card price-card--best">
           <span class="price-card__badge">Best Value</span>
           <span class="price-card__label">Yearly</span>
+          <div class="price-card__old-price">$120</div>
           <div class="price-card__amount"><sup>$</sup>89<span class="price-card__period">/year</span></div>
+          <span class="price-card__savebadge">Save $31</span>
           <div class="price-card__save">Get 3 Months Free</div>
           <div class="price-card__note">Only $7.42/month</div>
           <a href='https://www.renshawspt.com/vault-yearly/' class="price-card__btn">Join Yearly</a>
@@ -956,7 +975,9 @@
     <div class="price-card price-card--best">
       <span class="price-card__badge">Best Value</span>
       <span class="price-card__label">Yearly</span>
+      <div class="price-card__old-price">$120</div>
       <div class="price-card__amount"><sup>$</sup>89<span class="price-card__period">/year</span></div>
+      <span class="price-card__savebadge">Save $31</span>
       <div class="price-card__save">Get 3 Months Free</div>
       <div class="price-card__note">Only $7.42/month</div>
       <a href='https://www.renshawspt.com/vault-yearly/' class="price-card__btn">Join Yearly</a>
